@@ -1,0 +1,55 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --start-paused -d chrome --dart-define=flutter.inspector.structuredErrors=true --web-allow-expose-url --devtools-server-address http://127.0.0.1:9100/ --target lib\main.dart
+
+## exception
+
+StateError: Bad state: Cannot add event after closing
+
+```
+#0      _StreamController.add (dart:async/stream_controller.dart:553:24)
+#1      _StreamSinkWrapper.add (dart:async/stream_controller.dart:826:13)
+#2      AppConnection.runMain (package:dwds/src/connections/app_connection.dart:33:22)
+#3      WebDevFS.connect.<anonymous closure> (package:flutter_tools/src/isolated/devfs_web.dart:669:25)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.2.3, on Microsoft Windows [Version 10.0.19042.1165], locale en-US)
+    • Flutter version 2.2.3 at C:\Flutter
+    • Framework revision f4abaa0735 (2 months ago), 2021-07-01 12:46:11 -0700
+    • Engine revision 241c87ad80
+    • Dart version 2.13.4
+
+[!] Android toolchain - develop for Android devices (Android SDK version 30.0.2)
+    • Android SDK at C:\Users\JONY\AppData\Local\Android\sdk
+    • Platform android-31, build-tools 30.0.2
+    • Java binary at: C:\Program Files\Common Files\Oracle\Java\javapath\java.exe
+    • Java version Java(TM) SE Runtime Environment (build 16.0.1+9-24)
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/windows#android-setup for more details.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Android Studio (not installed)
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/windows#android-setup for detailed instructions).
+
+[✓] VS Code (version 1.60.0)
+    • VS Code at C:\Users\JONY\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.26.0
+
+[✓] Connected device (3 available)
+    • Android SDK built for x86 (mobile) • emulator-5554 • android-x86    • Android 11 (API 30) (emulator)
+    • Chrome (web)                       • chrome        • web-javascript • Google Chrome 93.0.4577.63
+    • Edge (web)                         • edge          • web-javascript • Microsoft Edge 93.0.961.38
+
+! Doctor found issues in 2 categories.
+```
